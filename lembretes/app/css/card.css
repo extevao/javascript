@@ -1,0 +1,26 @@
+.card {
+  background-color: #EBEF40;
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 16px;
+  width: 25%;
+}
+
+.card_colorFirst {
+  /*azul*/
+  background-color: #45AAEE;
+}
+
+.card_colorSecond {
+  /*vermelho*/
+  background-color: #FF1010;
+}
+
+.card_colorThird {
+  /*verde*/
+  background-color: #76EF40;
+}
+.card_colorFourth {
+  /*amarelo*/
+  background-color: #EBEF40;
+}
