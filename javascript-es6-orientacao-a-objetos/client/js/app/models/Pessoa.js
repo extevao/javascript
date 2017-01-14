@@ -1,10 +1,18 @@
-class Pessoa{
-    constructor(nome, sobrenome){
-        this._nome = nome;
-        this._sobrenome = sobrenome;
-    }
+class Pessoa {
 
-    obtemNomeCompleto(){
-        return 'Nome completo: ' + this._nome + ' ' + this._sobrenome;
+    constructor(nome) {
+        this.nome = nome;
     }
 }
+
+function exibeNome() {
+    alert(this.nome);
+}
+
+let pessoa = new Pessoa('Salsifufu');
+
+exibeNome('Lampreia'); // PRIMEIRA CHAMADA <=============
+
+exibeNome = exibeNome.bind(pessoa);
+
+exibeNome(); // SEGUNDA CHAMADA <=============

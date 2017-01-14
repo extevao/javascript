@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Exemplo de manitulação da DOM</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <p id="pl">Olá</p>
+    </body>
+    <script>
+        function mostra(){
+            alert('Fui clicado');
+        }
+         document
+            .querySelector('#pl')
+            .addEventListener('click', mostra);
+    </script>
+</html>

@@ -19,7 +19,7 @@ class NegociacaoController{
             .map((item, indice)=> item - indice % 2 )
         );
         
-        console.log(data);
+    
         
         let negociacao = new Negociacao(
             data,
@@ -27,7 +27,7 @@ class NegociacaoController{
             this._inputValor
         );
 
-         console.log(negociacao);
+
         
     }
 }
