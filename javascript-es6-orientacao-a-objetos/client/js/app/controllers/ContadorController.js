@@ -11,7 +11,6 @@ class ContadorController{
     }
     incrementa(){
         this._contador++;
-        this._elemento
-            .textContent = this._contador;
+        this._elemento.textContent = this._contador;
     }
 }
