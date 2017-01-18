@@ -1,21 +1,17 @@
 class Membro {
-    constructor(nome, email, idade, jogos) {
-        this.nome = nome;
-        this.email = email;
-        this.idade = idade;
-        this.jogos = jogos;
+    constructor(nome, email) {
+        this._nome = nome;
+        this._email = email;
+        this._jogos = [];
     }
 
     get nome() {
-        return this.nome;
+        return this._nome;
     }
     get email() {
-        return this.email;
-    }
-    get idade() {
-        return this.idade;
+        return this._email;
     }
     get jogos() {
-        return this.jogos;
+        return this._jogos;
     }
 }
