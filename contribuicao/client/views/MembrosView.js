@@ -3,7 +3,8 @@ class MembrosView {
         this._elemento = elemento;
     }
 
-    _template() {
+    _template(model) {
+      console.log(model);
         return `
           <table class="table table-hover table-bordered">
               <thead>
@@ -13,13 +14,22 @@ class MembrosView {
                   </tr>
               </thead>
               <tbody>
-                  <tfoot>
-                  </tfoot>
+                ${model.membros.map(membro =>
+                  `
+                  <tr>
+                    <td> ${membro.nome} </td>
+                    <td> ${membro.email} </td>
+                   </tr>
+                  `
+                ).join('')}
+              </tbody>
+              <tfoot>
+              </tfoot>
           </table>
       `;
     }
 
-    update(){
-      this._elemento.innerHTML = this._template();
+    update(model){
+      this._elemento.innerHTML = this._template(model);
     }
 }

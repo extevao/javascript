@@ -7,7 +7,7 @@ class ListaMembros {
     this._membros.push(membro);
   }
 
-  get membro(){
+  get membros(){
     return [].concat(this._membros);
   }
 }
