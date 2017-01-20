@@ -1,22 +1,24 @@
 class MembroController {
   constructor() {
     let $ = document.querySelector.bind(document);
-    this.inputNome = $('#nome');
-    this.inputEmail = $('#email');
+
+    this._membroForm = new MembroFormView($('#membroFormView'));
+    this._membroForm.update();
+    this._inputNome = $('#nome');
+    this._inputEmail = $('#email');
 
     this._membrosView = new MembrosView($('#membrosView'));
-    this._membrosView._update();
-    this._membroForm = new MembroFormView($('#membroFormView'));
-    this._membroForm._update();
+    this._membrosView.update();
+
   }
 
   adiciona(event){
     event.preventDefault();
-    let membro =  new Membro(this.inputNome.value, this.inputEmail.value);
-    console.log(membro);
+    let membro =  this._criaMembro();
+    this._membrosView.update()
   }
 
-  criaMembro(){
-    return new Membro(this.inputNome.value, this.inputEmail.value);
+  _criaMembro(){
+    return new Membro(this._inputNome.value, this._inputEmail.value);
   }
 }

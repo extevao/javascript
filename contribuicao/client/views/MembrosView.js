@@ -19,7 +19,7 @@ class MembrosView {
       `;
     }
 
-    _update(){
+    update(){
       this._elemento.innerHTML = this._template();
     }
 }

@@ -31,7 +31,7 @@ class MembroFormView {
           </form>
         `;
     }
-    _update(){
+    update(){
       this._elemento.innerHTML = this._template();
     }
 }
