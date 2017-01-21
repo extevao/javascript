@@ -17,15 +17,13 @@ class MembroFormView {
                       <label for="email">E-mail</label>
                       <input type="email" id="email" class="form-control" required/>
                   </div>
-                  <div class="">
-                      <button class="btn btn-primary" type="submit">
-                      Incluir
-                    </button>
-                      <button class="btn btn-danger" type="button">
-                      Apagar
-                    </button>
 
-                  </div>
+                  <button class="btn btn-primary btn-block" type="submit">
+                  Incluir
+                </button>
+
+
+
               </fieldset>
 
           </form>
