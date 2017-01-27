@@ -1,9 +1,9 @@
-class MembroFormView {
+class MembroFormView extends View{
     constructor(elemento) {
-        this._elemento = elemento;
+      super(elemento);
     }
 
-    _template() {
+    template() {
         return `
           <form class="form" onsubmit="cadastroMembro.adiciona(event)">
               <fieldset>
@@ -29,7 +29,5 @@ class MembroFormView {
           </form>
         `;
     }
-    update(membros){
-      this._elemento.innerHTML = this._template();
-    }
+
 }
