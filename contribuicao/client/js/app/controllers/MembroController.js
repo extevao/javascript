@@ -12,12 +12,18 @@ class MembroController {
     this._membrosView = new MembrosView($('#membrosView'));
     this._membrosView.update(this._listaMembros);
 
+    this._mensagem = new Mensagem();
+    this._mensagemView = new MensagemView($('#mensagemView'));
+
   }
 
   adiciona(event){
     event.preventDefault();
     this._listaMembros.adiciona(this._criaMembro());
     this._membrosView.update(this._listaMembros);
+
+    this._mensagem.texto = 'Membro cadastrado com sucesso.';
+    this._mensagemView.update(this._mensagem);
     this._limpaFormulario();
   }
 
