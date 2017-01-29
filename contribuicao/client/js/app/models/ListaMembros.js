@@ -1,12 +1,12 @@
 class ListaMembros {
-    constructor(armadilha) {
+    constructor() {
         this._membros = [];
-        this._armadilha = armadilha;
+
     }
 
     adiciona(membro) {
         this._membros.push(membro);
-        this._armadilha(this);
+
     }
 
     get membros() {
@@ -15,6 +15,6 @@ class ListaMembros {
 
     esvazia() {
         this._membros = [];
-        this._armadilha(this);
+
     }
 }
