@@ -10,4 +10,8 @@ class ListaMembros {
   get membros(){
     return [].concat(this._membros);
   }
+
+  esvazia(){
+    this._membros = [];
+  }
 }

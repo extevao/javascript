@@ -19,9 +19,9 @@ class MembroFormView extends View{
                   </div>
 
                   <button class="btn btn-primary btn-block" type="submit">
-                  Incluir
-                </button>
-
+                    Incluir
+                  </button>
+              
 
 
               </fieldset>

@@ -37,4 +37,18 @@ class MembroController {
 
     this._inputNome.focus();
   }
+
+  apaga(){
+    //esvazia a lista de membros
+    this._listaMembros.esvazia();
+
+    //atualiza view com a lista vazia
+    this._membrosView.update(this._listaMembros);
+
+    //exibe mensagem
+    this._mesnagem.texto = 'Lista de membros esvaziada com sucesso.';
+    //atualiza view com a nova mensagem
+    this._mesnagemView.update(this._mensagem);
+
+  }
 }
