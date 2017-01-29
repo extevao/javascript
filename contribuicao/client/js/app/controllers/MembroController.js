@@ -46,9 +46,9 @@ class MembroController {
     this._membrosView.update(this._listaMembros);
 
     //exibe mensagem
-    this._mesnagem.texto = 'Lista de membros esvaziada com sucesso.';
+    this._mensagem.texto = 'Lista de membros esvaziada com sucesso.';
     //atualiza view com a nova mensagem
-    this._mesnagemView.update(this._mensagem);
+    this._mensagemView.update(this._mensagem);
 
   }
 }
