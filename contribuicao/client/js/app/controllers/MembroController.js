@@ -7,7 +7,7 @@ class MembroController {
 
     this._inputNome = $('#nome');
     this._inputEmail = $('#email');
-    this._listaMembros = new ListaMembros();
+    this._listaMembros = new ListaMembros(model => this._membrosView.update(model));
 
     this._membrosView = new MembrosView($('#membrosView'));
     this._membrosView.update(this._listaMembros);
@@ -18,9 +18,12 @@ class MembroController {
   }
 
   adiciona(event){
+
     event.preventDefault();
     this._listaMembros.adiciona(this._criaMembro());
-    this._membrosView.update(this._listaMembros);
+
+
+    // this._membrosView.update(this._listaMembros);
 
     this._mensagem.texto = 'Membro cadastrado com sucesso.';
     this._mensagemView.update(this._mensagem);
@@ -43,7 +46,7 @@ class MembroController {
     this._listaMembros.esvazia();
 
     //atualiza view com a lista vazia
-    this._membrosView.update(this._listaMembros);
+    // this._membrosView.update(this._listaMembros);
 
     //exibe mensagem
     this._mensagem.texto = 'Lista de membros esvaziada com sucesso.';
