@@ -8,7 +8,7 @@ class MembroController {
         this._inputNome = $('#nome');
         this._inputEmail = $('#email');
 
-        let self = this; // guarda em uma variável o valor de this
+        let self = this;
         this._listaMembros = new Proxy(new ListaMembros(), {
             get(target, prop, receiver) {
                 if (['adiciona', 'esvazia'].includes(prop) && typeof(target[prop]) === typeof(Function)) {
