@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Escala</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+
+</head>
+
+<body class="container">
+
+    <h1 class="text-center">Escala</h1>
+
+    <div id="mensagemView"></div>
+
+    <form class="form" onsubmit="negociacaoController.adiciona(event)">
+
+        <div class="form-group">
+            <label for="data">Data</label>
+            <input type="date" id="data" class="form-control" required autofocus/>
+        </div>
+
+        <div class="form-group">
+            <label for="quantidade">Nome</label>
+            <input type="number" min="1" step="1" id="quantidade" class="form-control" value="1" required/>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Incluir</button>
+    </form>
+
+    <div class="text-center">
+        <button class="btn btn-primary text-center" type="button">
+            Importar Negociações
+        </button>
+        <button class="btn btn-primary text-center" onclick="negociacaoController.apaga()" type="button">
+            Apagar
+        </button>
+    </div>
+    <br>
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>NOME</th>
+                <th>Data</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td>  </td>
+                <td>  </td>
+            </tr>
+
+        </tbody>
+        <tfoot>
+        </tfoot>
+    </table>
+    <button class="btn btn-danger btn-block" type="button" onclick="cadastroMembro.apaga()">
+      Apagar Lista
+    </button>
+
+
+
+
+
+
+
+    <script>
+        let negociacaoController = new NegociacaoController();
+    </script>
+
+
+
+
+</body>
+
+</html>
