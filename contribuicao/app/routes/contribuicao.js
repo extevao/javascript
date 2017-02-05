@@ -1,5 +1,9 @@
 module.exports = function(app) {
     var api = app.api.contribuicao;
-    app.get('/v1/contribuicoes', api.lista);
+    app.route('/v1/contribuicoes')
+        .get(api.lista);
+
+    app.route('/v1/contribuicoes/:id')
+        .get(api.buscaPorId);
 
 }
