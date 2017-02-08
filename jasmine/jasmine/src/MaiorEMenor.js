@@ -1,24 +1,20 @@
-function MaiorMenor() {
+class MaiorMenor {
+    constructor(maior = Number.MIN_VALUE, menor = Number.MAX_VALUE) {
+        this._maior = maior;
+        this._menor = menor;
 
-    var menor;
-    var maior;
+    }
+    get pegaMenor() {
+        return this._menor;
+    }
+    get pegaMaior() {
+        return this._maior;
+    }
+    encontra(nuns) {
 
-    var clazz = {
-        encontra: function(nuns) {
-            menor = Number.MAX_VALUE;
-            maior = Number.MIN_VALUE;
-            nuns.forEach(function(num) {
-                if (num < menor) menor = num;
-                if (num > maior) maior = num;
-            });
-        },
-        pegaMenor: function() {
-            return menor;
-        },
-        pegaMaior: function() {
-            return maior;
-        }
-    };
-
-    return clazz;
+        nuns.forEach(num => {
+            if (num < this._menor) this._menor = num;
+            if (num > this._maior) this._maior = num;
+        });
+    }
 }

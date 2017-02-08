@@ -23,6 +23,6 @@ class MaiorMenor {
 var algoritmo = new MaiorMenor();
 console.log(algoritmo);
 
-algoritmo.encontra([7, 6, 5, 4]);
+algoritmo.encontra([5,15,7,9,11]);
 console.log(algoritmo.pegaMaior);
 console.log(algoritmo.pegaMenor);
