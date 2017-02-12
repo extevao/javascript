@@ -7,7 +7,7 @@ class NegociacaoController {
         this._inputQuantidade = $('#quantidade');
         this._inputValor = $('#valor');
 
-        this._negociacoesService = new NegociacaoService();
+        this._negociacaoService = new NegociacaoService();
 
 
         this._listaNegociacoes = new Bind(
@@ -38,13 +38,15 @@ class NegociacaoController {
 
     importaNegociacoes() {
 
-      this._negociacoesService.obterNegociacoesDaSemana((erro, negociacoes) => {
-        if(erro){
-          this._mensagem.texto = erro;
-          return;
-        }
-        negociacoes  .forEach(negociacao => this._listaNegociacoes.adiciona(negociacao));
-      })
+        let promessa = this._negociacaoService.obterNegociacoesDaSemana();
+
+        promessa.then(negociacoes => {
+            negociacoes.forEach(negociacao => {
+                this._listaNegociacoes.adiciona(negociacao);
+            });
+            this._mensagem.texto = 'Negociações importadas com sucesso.';
+        }).catch(erro => this._mensagem.texto = erro);
+
 
     }
     _criaNegociacao() {
