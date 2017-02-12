@@ -7,6 +7,8 @@ class NegociacaoController {
         this._inputQuantidade = $('#quantidade');
         this._inputValor = $('#valor');
 
+        this._negociacoesService = new NegociacaoService();
+
 
         this._listaNegociacoes = new Bind(
             new ListaNegociacoes(),
@@ -36,24 +38,13 @@ class NegociacaoController {
 
     importaNegociacoes() {
 
-        let xhr = new XMLHttpRequest();
-
-        xhr.open('GET', 'negociacoes/semana');
-        xhr.onreadystatechange = () => {
-            if (xhr.readyState == 4) {
-                if (xhr.status == 200) {
-                    console.log(xhr.responseText);
-                } else {
-                    console.log(xhr.responseText);
-                    this._mensagem.texto = 'Não foi possível obter as negociações';
-                }
-
-
-            }
+      this._negociacoesService.obterNegociacoesDaSemana((erro, negociacoes) => {
+        if(erro){
+          this._mensagem.texto = erro;
+          return;
         }
-
-        xhr.send();
-
+        negociacoes  .forEach(negociacao => this._listaNegociacoes.adiciona(negociacao));
+      })
 
     }
     _criaNegociacao() {
